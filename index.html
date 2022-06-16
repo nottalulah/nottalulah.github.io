@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <textarea id="sort-area" style="width: 500px; height: 500px"></textarea>
+    <div>
+      <button id="sort-button" style="display: inline">Sort</button>
+      <button id="reverse-sort-button" style="display: inline">Reverse sort</button>
+    </div>
+    <script type="application/javascript">
+      document.getElementById("sort-button").onclick = (e) => {
+        let sortArea = document.getElementById("sort-area");
+        let text = sortArea.value;
+        let sorted = text.split("\n").sort();
+        sortArea.value = sorted.join("\n").trim() + "\n";
+      };
+
+      document.getElementById("reverse-sort-button").onclick = (e) => {
+        let sortArea = document.getElementById("sort-area");
+        let text = sortArea.value;
+        let sorted = text.split("\n").sort().reverse();
+        sortArea.value = sorted.join("\n").trim() + "\n";
+      };
+    </script>
+  </body>
+</html>
